@@ -6,7 +6,7 @@ use App\Models\User;
 
 class UserRepository
 {
-    public function create(array $data): User
+    public function create(User $data): User
     {
         return User::create($data);
     }

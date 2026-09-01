@@ -29,8 +29,8 @@ class AuthService
         return $user;
     }
 
-    public function logout(array $data): void
+    public function logout(User $user): void
     {
-        // //
+        $user->currentAccessToken()?->delete();
     }
 }
