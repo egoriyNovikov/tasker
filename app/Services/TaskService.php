@@ -25,7 +25,7 @@ class TaskService
         return $this->taskRepository->show($task);
     }
 
-    public function update(Task $task, array $data): bool
+    public function update(Task $task, array $data): Task
     {
         return $this->taskRepository->update($task, $data);
     }
