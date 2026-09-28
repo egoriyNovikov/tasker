@@ -15,4 +15,6 @@ Route::middleware('auth:sanctum')->group(function () {
         ->can('update', 'task');
     Route::delete('tasks/{task}', [TaskController::class, 'destroy'])
         ->can('delete', 'task');
+    Route::post('/tasks/interpret', [TaskController::class, 'interpret'])
+        ->can('interpret', Task::class);
 });

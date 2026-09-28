@@ -8,6 +8,7 @@ use App\Http\Requests\StoreTaskRequest;
 use Illuminate\Http\JsonResponse;
 use App\Models\Task;
 use App\Http\Requests\UpdateTaskRequest;
+use Illuminate\Support\Facades\Http;
 
 class TaskController extends Controller
 {
@@ -47,5 +48,11 @@ class TaskController extends Controller
             'message' => 'Task deleted successfully',
             'id' => $task->id,
         ], 200);
+    }
+
+    public function interpret(Request $request)
+    {
+        $task = $this->taskService->interpret($request->user(), $request->input('text'), $request->input('confidence'));
+        return response()->json($task, 200);
     }
 }
