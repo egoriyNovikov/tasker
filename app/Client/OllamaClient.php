@@ -9,9 +9,9 @@ class OllamaClient
 {
     public function interpret(string $text, ?float $confidence, string $system_message): string
     {
-        $response = Http::timeout(50)->post('http://ollama:11434/api/chat',
+        $response = Http::timeout(50)->post(config('services.ollama.url'),
         [
-            "model" => "qwen3:4b",
+            "model" => config('services.ollama.model'),
             "messages" => [
                 [
                     "role" => "system",
