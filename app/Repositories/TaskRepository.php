@@ -32,4 +32,9 @@ class TaskRepository
     {
         return $task->delete();
     }
+
+    public function find(int $id)
+    {
+        return Task::findOrFail($id);
+    }
 }
