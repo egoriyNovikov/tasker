@@ -38,6 +38,11 @@ return [
     'ollama' => [
         'url' => env('OLLAMA_URL'),
         'model' => env('OLLAMA_MODEL'),
-    ]
+    ],
+
+    'telegram' => [
+        'url' => env('TELEGRAM_URL'),
+        'token' => env('TELEGRAM_TOKEN'),
+    ],
 
 ];
